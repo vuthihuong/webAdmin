@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My First</title>
+        
+        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyCnKHP42pOqDkrz5IlAW513pEvPZcQCVb8",
+                authDomain: "photoapp-859b5.firebaseapp.com",
+                databaseURL: "https://photoapp-859b5.firebaseio.com",
+                projectId: "photoapp-859b5",
+                storageBucket: "photoapp-859b5.appspot.com",
+                messagingSenderId: "429622908808"
+            };
+            firebase.initializeApp(config);
+        </script>
+    </head>
+    <body>
+        <h1>Thêm loại ảnh</h1>
+        <input type="text" id="personCatg" placeholder="personCatg">
+            <br/>
+            <br/>
+        <input type="text" id="gender" placeholder="gender">
+            <br/>
+            <br/>
+        <input type="text" id="view" placeholder="view">
+            <br/>
+            <br/>
+        <input type="text" id="clother" placeholder="clother">
+            <br/>
+            <br/>
+        <input type="text" id="accomodation" placeholder="accomodation">
+            <br/>
+            <br/>
+        <input type="text" id="imageCation" placeholder="Write a Caption">
+          <br/>
+            <br/>
+            <input type="file" id = "file" class= "upload-group" />
+            <br>
+            <br>
+ 
+
+        <button id='uploadButton' onclick="uploadfile()">Submit</button>
+        
+        <script>
+            var selectedFile;
+                $("#file").on("change", function(event){ 
+                    selectedFile = event.target.files[0];
+                    $('#uploadButton').show();
+                });
+               
+                function uploadfile() {
+                    var filename = selectedFile.name;
+                    var storageRef = firebase.storage().ref('/images/' + filename);
+                    var uploadTask = storageRef.put(selectedFile)
+                   
+                    uploadTask.on('state_changed', function(snapshot){
+                        }, function(error) {
+                        }, function() {
+                            var postKey = firebase.database().ref('ImagePose/').push().key;
+                            uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+                                var updates = {};
+                                var postData = { 
+                                url: downloadURL, 
+                                caption: $('#imageCation').val()
+                                }
+                                updates['/ImagePose/'+postKey] = postData;
+                                firebase.database().ref().update(updates);
+                            });
+                        });
+                }
+        </script>
+    </body>
+</html>

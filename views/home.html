@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My First</title>
+        
+        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyCnKHP42pOqDkrz5IlAW513pEvPZcQCVb8",
+                authDomain: "photoapp-859b5.firebaseapp.com",
+                databaseURL: "https://photoapp-859b5.firebaseio.com",
+                projectId: "photoapp-859b5",
+                storageBucket: "photoapp-859b5.appspot.com",
+                messagingSenderId: "429622908808"
+            };
+            firebase.initializeApp(config);
+        </script>
+    </head>
+    <body>
+        <h1>Hello haha</h1>
+        <input type="text" id="email" placeholder="Email">
+
+        <input type="text" id="password" placeholder="Password">
+        <button onclick="myFunction()">Submit</button>
+        <script>
+                function myFunction() {
+                    var email = document.getElementById("email").value;
+                    var password = document.getElementById("password").value
+                    // document.getElementById("demo").innerHTML = x;
+                    firebase.auth().createUserWithEmailAndPassword(email, password)
+                            .catch(function(error) {
+                        // Handle Errors here.
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        if (errorCode == 'auth/weak-password') {
+                            alert('The password is too weak.');
+                        } else {
+                            alert(errorMessage);
+                        }
+                        console.log(error);
+                        });
+                            }
+               
+                
+           
+        </script>
+    </body>
+</html>
