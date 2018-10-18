@@ -7595,359 +7595,394 @@
 
                         if(valueKindOfPerson === "Nhóm người" && valueGender === "Nam"){
                             if(valueClother === "Áo dài"){ 
-                                updates['/ImagePose/GroupPerson/Male/AoDai/'+postKey] = postData;
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/AoDai/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Áo khoác"){ 
-                                updates['/ImagePose/GroupPerson/Male/Coat/'+postKey] = postData;
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Coat/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Quần áo đồng phục"){ 
-                                updates['/ImagePose/GroupPerson/Male/Uniform/'+postKey] = postData;
+                            else if(valueClother === "Đồng phục học sinh"){ 
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/UniformStudent/'+postKey] = postData;
+                                firebase.database().ref().update(updates);
+                            }
+                            else if(valueClother === "Đồng phục công sở"){ 
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/UniformComple/'+postKey] = postData;
+                                firebase.database().ref().update(updates);
+                            }
+                            else if(valueClother === "Quần áo thể thao"){ 
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/UniformPlay/'+postKey] = postData;
+                                firebase.database().ref().update(updates);
+                            }
+                            else if(valueClother === "Comple"){ 
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Comple/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Váy"){ 
-                                updates['/ImagePose/GroupPerson/Male/Skirt/'+postKey] = postData;
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Skirt/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Mũ, nón, ô"){ 
-                                updates['/ImagePose/GroupPerson/Male/Hat/'+postKey] = postData;
+                            else if(valueClother === "Mũ, nón"){ 
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Hat/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Đồng hồ, vòng tay, đồ trang sức"){ 
-                                updates['/ImagePose/GroupPerson/Male/Clock/'+postKey] = postData;
+                            else if(valueClother === "Ô"){ 
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Umbrella/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Túi xách, điện thoại"){ 
-                                updates['/ImagePose/GroupPerson/Male/Telephone/'+postKey] = postData;
+                            else if(valueClother === "Điện thoại"){ 
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Phone/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Kính"){ 
-                                updates['/ImagePose/GroupPerson/Male/Glass/'+postKey] = postData;
+                            else if(valueClother === "Ba lô hai dây"){ 
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/StringBag/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Bóng bay"){ 
-                                updates['/ImagePose/GroupPerson/Male/Ballon/'+postKey] = postData;
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Ballon/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Bó hoa"){ 
-                                updates['/ImagePose/GroupPerson/Male/Flower/'+postKey] = postData;
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Flower/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Xe đạp"){ 
-                                updates['/ImagePose/GroupPerson/Male/cycle/'+postKey] = postData;
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/cycle/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Đàn"){ 
-                                updates['/ImagePose/GroupPerson/Male/Instrument/'+postKey] = postData;
+                            else if(valueClother === "Ba lô dây chéo"){ 
+                                updates['/ImagePose/GroupPerson/Male/CrossBag/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Máy ảnh"){ 
-                                updates['/ImagePose/GroupPerson/Male/Photo/'+postKey] = postData;
+                            else if(valueClother === "Quả bóng"){ 
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Ball/'+postKey] = postData;
+                                firebase.database().ref().update(updates);
+                            }
+                            else if(valueClother === "Sổ cầm tay"){ 
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Book/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Hồ, sông, biển"){ 
-                                updates['/ImagePose/GroupPerson/Male/Beach/'+postKey] = postData;
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Beach/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Đầm sen"){ 
-                                updates['/ImagePose/GroupPerson/Male/Lotus/'+postKey] = postData;
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Lotus/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Núi"){ 
-                                updates['/ImagePose/GroupPerson/Male/Mountain/'+postKey] = postData;
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Mountain/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Khung cửa"){ 
-                                updates['/ImagePose/GroupPerson/Male/Door/'+postKey] = postData;
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Door/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Cầu thang"){ 
-                                updates['/ImagePose/GroupPerson/Male/Stair/'+postKey] = postData;
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Stair/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Khu vườn, công viên"){ 
-                                updates['/ImagePose/GroupPerson/Male/Park/'+postKey] = postData;
+                            else if(valueClother === "Công viên"){ 
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Park/'+postKey] = postData;
+                                firebase.database().ref().update(updates);
+                            }
+                            else if(valueClother === "Cây cối"){ 
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Tree/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Đứng"){ 
-                                updates['/ImagePose/GroupPerson/Male/Stand/'+postKey] = postData;
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Stand/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Ngồi"){ 
-                                updates['/ImagePose/GroupPerson/Male/Seat/'+postKey] = postData;
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Seat/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Nằm"){ 
-                                updates['/ImagePose/GroupPerson/Male/Lie/'+postKey] = postData;
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Lie/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Tựa tay lên một điểm"){ 
-                                updates['/ImagePose/GroupPerson/Male/HandRest/'+postKey] = postData;
+                            else if(valueClother === "Tựa"){ 
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Base/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Xoay nghiêng người"){ 
-                                updates['/ImagePose/GroupPerson/Male/TurnCircle/'+postKey] = postData;
+                            else if(valueClother === "Nghiêng người"){ 
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/TurnCircle/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Đứng chéo chân"){ 
-                                updates['/ImagePose/GroupPerson/Male/CrossLeg/'+postKey] = postData;
+                            else if(valueClother === "Bám"){ 
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Cling/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Khoanh tay trước ngực"){ 
-                                updates['/ImagePose/GroupPerson/Male/HandChest/'+postKey] = postData;
+                            else if(valueClother === "Bật cao"){ 
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Jump/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Tay chống hông"){ 
-                                updates['/ImagePose/GroupPerson/Male/HipHand/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
-                            }
-                            else if(valueClother == "Cho tay vào túi quần"){ 
-                                updates['/ImagePose/GroupPerson/Male/PantPocket/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
-                            }
-                            else if(valueClother === "Tựa cằm lên tay"){ 
-                                updates['/ImagePose/GroupPerson/Male/HandChin/'+postKey] = postData;
+                            else if(valueClother === "Chạy"){ 
+                                updates['/ImagePose/GroupPerson/DoubleMale/Baby/Run/'+postKey] = postData;
                                 firebase.database().ref().update(updates);
                             }
                         }
                         else if(valueKindOfPerson === "Nhóm người" && valueGender === "Nữ"){
                             if(valueClother === "Áo dài"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/AoDai/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/AoDai/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Áo khoác"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Coat/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Coat/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Quần áo đồng phục"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Uniform/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Đồng phục học sinh"){ 
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/UniformStudent/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
+                            }
+                            else if(valueClother === "Đồng phục công sở"){ 
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/UniformComple/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
+                            }
+                            else if(valueClother === "Quần áo thể thao"){ 
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/UniformPlay/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
+                            }
+                            else if(valueClother === "Comple"){ 
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Comple/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Váy"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Skirt/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Skirt/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Mũ, nón, ô"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Hat/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Mũ, nón"){ 
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Hat/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Đồng hồ, vòng tay, đồ trang sức"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Clock/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Ô"){ 
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Umbrella/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Túi xách, điện thoại"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Telephone/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Điện thoại"){ 
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Phone/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Kính"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Glass/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Ba lô hai dây"){ 
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/StringBag/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Bóng bay"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Ballon/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Ballon/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Bó hoa"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Flower/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Flower/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Xe đạp"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/cycle/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/cycle/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Đàn"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Instrument/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Ba lô dây chéo"){ 
+                            updates['/ImagePose/GroupPerson/Male/CrossBag/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Máy ảnh"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Photo/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Quả bóng"){ 
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Ball/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
+                            }
+                            else if(valueClother === "Sổ cầm tay"){ 
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Book/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Hồ, sông, biển"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Beach/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Beach/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Đầm sen"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Lotus/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Lotus/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Núi"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Mountain/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Mountain/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Khung cửa"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Door/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Door/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Cầu thang"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Stair/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Stair/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Khu vườn, công viên"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Park/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Công viên"){ 
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Park/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
+                            }
+                            else if(valueClother === "Cây cối"){ 
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Tree/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Đứng"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Stand/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Stand/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Ngồi"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Seat/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Seat/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Nằm"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/Lie/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Lie/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Tựa tay lên một điểm"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/HandRest/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Tựa"){ 
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Base/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Xoay nghiêng người"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/TurnCircle/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Nghiêng người"){ 
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/TurnCircle/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Đứng chéo chân"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/CrossLeg/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Bám"){ 
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Cling/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Khoanh tay trước ngực"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/HandChest/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Bật cao"){ 
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Jump/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Tay chống hông"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/HipHand/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
-                            }
-                            else if(valueClother == "Cho tay vào túi quần"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/PantPocket/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
-                            }
-                            else if(valueClother === "Tựa cằm lên tay"){ 
-                                updates['/ImagePose/GroupPerson/FeMale/HandChin/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Chạy"){ 
+                            updates['/ImagePose/GroupPerson/DoubleFemale/Baby/Run/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                            
                         }
                         else if(valueKindOfPerson === "Nhóm người" && valueGender === "Nam - Nữ"){
                             if(valueClother === "Áo dài"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/AoDai/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/AoDai/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Áo khoác"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Coat/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Coat/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Quần áo đồng phục"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Uniform/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Đồng phục học sinh"){ 
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/UniformStudent/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
+                            }
+                            else if(valueClother === "Đồng phục công sở"){ 
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/UniformComple/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
+                            }
+                            else if(valueClother === "Quần áo thể thao"){ 
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/UniformPlay/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
+                            }
+                            else if(valueClother === "Comple"){ 
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Comple/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Váy"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Skirt/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Skirt/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Mũ, nón, ô"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Hat/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Mũ, nón"){ 
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Hat/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Đồng hồ, vòng tay, đồ trang sức"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Clock/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Ô"){ 
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Umbrella/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Túi xách, điện thoại"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Telephone/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Điện thoại"){ 
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Phone/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Kính"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Glass/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Ba lô hai dây"){ 
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/StringBag/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Bóng bay"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Ballon/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Ballon/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Bó hoa"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Flower/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Flower/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Xe đạp"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/cycle/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/cycle/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Đàn"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Instrument/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Ba lô dây chéo"){ 
+                            updates['/ImagePose/GroupPerson/Male/CrossBag/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Máy ảnh"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Photo/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Quả bóng"){ 
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Ball/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
+                            }
+                            else if(valueClother === "Sổ cầm tay"){ 
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Book/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Hồ, sông, biển"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Beach/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Beach/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Đầm sen"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Lotus/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Lotus/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Núi"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Mountain/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Mountain/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Khung cửa"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Door/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Door/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Cầu thang"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Stair/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Stair/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Khu vườn, công viên"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Park/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Công viên"){ 
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Park/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
+                            }
+                            else if(valueClother === "Cây cối"){ 
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Tree/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Đứng"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Stand/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Stand/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Ngồi"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Seat/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Seat/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
                             else if(valueClother === "Nằm"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/Lie/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Lie/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Tựa tay lên một điểm"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/HandRest/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Tựa"){ 
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Base/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Xoay nghiêng người"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/TurnCircle/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Nghiêng người"){ 
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/TurnCircle/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Đứng chéo chân"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/CrossLeg/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Bám"){ 
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Cling/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Khoanh tay trước ngực"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/HandChest/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Bật cao"){ 
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Jump/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother === "Tay chống hông"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/HipHand/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
+                            else if(valueClother === "Chạy"){ 
+                            updates['/ImagePose/GroupPerson/MaleFemale/Baby/Run/'+postKey] = postData;
+                            firebase.database().ref().update(updates);
                             }
-                            else if(valueClother == "Cho tay vào túi quần"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/PantPocket/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
-                            }
-                            else if(valueClother === "Tựa cằm lên tay"){ 
-                                updates['/ImagePose/GroupPerson/FeMaleAndMale/HandChin/'+postKey] = postData;
-                                firebase.database().ref().update(updates);
-                            }
-                           
                         }
                       });
                     }
