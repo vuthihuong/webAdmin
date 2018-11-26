@@ -22,28 +22,114 @@
 </head>
 
 <body style="margin-left: 300px">
-   <form method="post" enctype="multipart/form-data">
-    <p>Loại người:
-            <select id="kindofperson" name="hello" onchange="myChange()" style="width: 200px">
+    <form method="post" enctype="multipart/form-data">
+        <h1>Thêm loại ảnh</h1>
+        <p>Loại người:
+            <select id="kindofperson" name="GroupPerson" onchange="myChange()" style="width: 200px">
                 <option></option>
                 <option>Một người</option>
                 <option>Hai người</option>
                 <option>Nhóm người</option>
             </select>
         </p>
-            <br><br>
-        
+        <br><br>
+
         <p>Giới tính:
-            <select id="gender" style="width: 200px">
-                    <option>Một người</option>
-                    <option>Hai người</option>
-                    <option>Nhóm người</option>
+            <select id="gender" name="Gender" style="width: 200px">
+                <option id='one'></option>
+                <option id='two'></option>
+                <option id='group'></option>
             </select>
         </p>
-        <input type="text" name="category"/>
-        <input type="file" name="myImage"/>
-        <input type="submit" name='submit' value="submit"/>
-   </form>
+        <br><br>
+        <p>Nhóm tuổi:
+            <select id="age" name="Age" style="width: 200px">
+                <option></option>
+                <option>Thiếu nhi</option>
+                <option>Thiếu niên</option>
+                <option>Thanh niên</option>
+                <option>Trung niên</option>
+                <option>Người cao tuổi</option>
+                <option>Thiếu nhi - Thiếu niên</option>
+                <option>Thiếu nhi - Thanh niên</option>
+                <option>Thiếu nhi - Trung niên</option>
+                <option>Thiếu nhi - Người cao tuổi</option>
+                <option>Thiếu niên - Thanh niên</option>
+                <option>Thiếu niên - Trung niên</option>
+                <option>Thiếu niên - Người cao tuổi</option>
+                <option>Thanh niên - Trung niên</option>
+                <option>Thanh niên - Người cao tuổi</option>
+                <option>Trung niên - Người cao tuổi</option>
+            </select>
+        </p>
+        <br><br>
+        <p>Thể loại<i></i>:
+            <select id="clother" name="Clother" style="width: 200px">
+                <option></option>
+                <option>Áo dài</option>
+                <option>Áo khoác</option>
+                <option>Đồng phục học sinh</option>
+                <option>Đồng phục công sở</option>
+                <option>Quần áo thể thao</option>
+                <option>Comple</option>
+                <option>Váy</option>
+
+                <option>Mũ, nón</option>
+                <option>Ô</option>
+                <option>Túi xách</option>
+                <option>Điện thoại</option>
+                <option>Ba lô hai dây</option>
+                <option>Ba lô dây chéo</option>
+                <option>Bóng bay</option>
+                <option>Bó hoa</option>
+                <option>Xe đạp</option>
+                <option>Quả bóng</option>
+                <option>Sổ cầm tay</option>
+
+                <option>Hồ, sông, biển</option>
+                <option>Đầm sen</option>
+                <option>Núi</option>
+                <option>Khung cửa</option>
+                <option>Cầu thang</option>
+                <option>Công viên</option>
+                <option>Cây cối</option>
+
+                <option>Đứng</option>
+                <option>Ngồi</option>
+                <option>Nằm</option>
+                <option>Tựa</option>
+                <option>Nghiêng người</option>
+                <option>Bám</option>
+                <option>Bật cao</option>
+                <option>Chạy</option>
+            </select>
+        </p>
+        <br><br>
+        <!-- <input type="text" name="category" /> -->
+        <input type="file" name="myImage" />
+        <input type="submit" name='submit' value="submit" />
+    </form>
 </body>
+<script>
+    function myChange() {
+        var selector = document.getElementById('kindofperson');
+        var value = selector[selector.selectedIndex].value;
+        if (value === "Một người") {
+            document.getElementById("one").innerHTML = "Nam";
+            document.getElementById("two").innerHTML = "Nữ";
+            document.getElementById("group").innerHTML = "";
+        }
+        else if (value == "Hai người") {
+            document.getElementById("one").innerHTML = "Nam - Nam";
+            document.getElementById("two").innerHTML = "Nam - Nữ";
+            document.getElementById("group").innerHTML = "Nữ - Nữ";
+        }
+        else if (value === 'Nhóm người') {
+            document.getElementById("one").innerHTML = "Nam";
+            document.getElementById("two").innerHTML = "Nữ";
+            document.getElementById("group").innerHTML = "Nam - Nữ";
+        }
+    }
+</script>
 
 </html>
