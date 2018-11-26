@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My First</title>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyCnKHP42pOqDkrz5IlAW513pEvPZcQCVb8",
+            authDomain: "photoapp-859b5.firebaseapp.com",
+            databaseURL: "https://photoapp-859b5.firebaseio.com",
+            projectId: "photoapp-859b5",
+            storageBucket: "photoapp-859b5.appspot.com",
+            messagingSenderId: "429622908808"
+        };
+        firebase.initializeApp(config);
+            // var Flickr = require("flickrapi"),
+
+    </script>
+</head>
+
+<body style="margin-left: 300px">
+   <form method="post" enctype="multipart/form-data">
+        <input type="file" name="myImage"/>
+        <input type="submit" name='submit' value="submit"/>
+   </form>
+</body>
+
+</html>
