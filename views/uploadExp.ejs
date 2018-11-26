@@ -23,6 +23,24 @@
 
 <body style="margin-left: 300px">
    <form method="post" enctype="multipart/form-data">
+    <p>Loại người:
+            <select id="kindofperson" name="hello" onchange="myChange()" style="width: 200px">
+                <option></option>
+                <option>Một người</option>
+                <option>Hai người</option>
+                <option>Nhóm người</option>
+            </select>
+        </p>
+            <br><br>
+        
+        <p>Giới tính:
+            <select id="gender" style="width: 200px">
+                    <option>Một người</option>
+                    <option>Hai người</option>
+                    <option>Nhóm người</option>
+            </select>
+        </p>
+        <input type="text" name="category"/>
         <input type="file" name="myImage"/>
         <input type="submit" name='submit' value="submit"/>
    </form>

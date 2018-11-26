@@ -28,10 +28,15 @@ const upload = multer({
     storage: storage
 }).single('myImage')
 router.get('/', function(req, res, next){ 
-    res.render('uploadExp', {title: 'Express'})
+    res.render('uploadExp', {
+        title: 'Express',
+       
+    })
 });
 router.post('/',   (req, res) => { 
     upload(req, res, async (err) => {
+        console.log(req.body)
+       var a =  req.body;
         if(err){ 
             res.render('uploadExp', { 
                 msg: err
@@ -46,6 +51,7 @@ router.post('/',   (req, res) => {
             else { 
                 res.render('uploadExp', { 
                     msg: 'File uploaded',
+                   
                     file: `views/uploads/${req.file.filename}`
                 });
                 flickrOptions = {
@@ -89,13 +95,12 @@ router.post('/',   (req, res) => {
                     var linkImage = urls[urls.length - 1]["source"]
                     // res.send({ "result": linkImage })
                     console.log(linkImage);
+                    
+                  
+                        app.database().ref('ImageFlick').child(a.category).push(linkImage);
                    
-                    if(value === 'One'){ 
-                        app.database().ref('ImageFlick').child('One').push(linkImage);
-                    }
-                    else { 
-                        app.database().ref('ImageFlick').child('Two').push(linkImage);
-                    }
+                   
+                  
                    
                 })
             }
