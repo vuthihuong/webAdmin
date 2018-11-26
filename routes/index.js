@@ -1,3 +1,12 @@
+var firebase = require('firebase');
+var app = firebase.initializeApp({ 
+    apiKey: "AIzaSyCnKHP42pOqDkrz5IlAW513pEvPZcQCVb8",
+    authDomain: "photoapp-859b5.firebaseapp.com",
+    databaseURL: "https://photoapp-859b5.firebaseio.com",
+    projectId: "photoapp-859b5",
+    storageBucket: "photoapp-859b5.appspot.com",
+    messagingSenderId: "429622908808"
+ });
 
 var express = require('express');
 var router = express.Router();
@@ -80,7 +89,14 @@ router.post('/',   (req, res) => {
                     var linkImage = urls[urls.length - 1]["source"]
                     // res.send({ "result": linkImage })
                     console.log(linkImage);
-                    // firebase.database().ref('ImageFlick').push(linkImage);
+                   
+                    if(value === 'One'){ 
+                        app.database().ref('ImageFlick').child('One').push(linkImage);
+                    }
+                    else { 
+                        app.database().ref('ImageFlick').child('Two').push(linkImage);
+                    }
+                   
                 })
             }
         }
