@@ -82,7 +82,7 @@ router.post('/', (req, res) => {
                     var Flickr = require("flickr-sdk");
                     var flickr = new Flickr("3bfb72007e1061d8ac6893be02e7180a");
                     console.log(value)
-                    await flickr.photos.getSizes({
+                    await flickr.photos.getSizes({ 
                         photo_id: value[0]
                     }).then(function (res) {
                         link = res.body;
@@ -271,9 +271,9 @@ router.post('/', (req, res) => {
                     if (a.Clother == "Chạy") {
                         clother = "Run"
                     }
-                    app.database().ref('ImageFlick').child(groupPerson)
+                    app.database().ref('ImageFlickr').child(groupPerson)
                         .child(gender).child(age).child(clother).push({
-                            uri: linkImage
+                            url: linkImage
                         });
                 })
             }

@@ -11,6 +11,12 @@
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.3",
-    "morgan": "^1.9.1"
+    "firebase": "^5.5.9",
+    "flickr-sdk": "^3.7.0",
+    "flickr-upload": "^1.0.1",
+    "flickr-with-uploads": "*",
+    "flickrapi": "^0.6.0",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1"
   }
 }

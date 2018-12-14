@@ -19,17 +19,22 @@
     </head>
     <body>
         <h1>Thêm loại ảnh</h1>
+        <input type="text" id = "personCategory" placeholder="Loại người">
+        <input type="text" id="gender" placeholder="Giới tính" >
         <input type="text" id="groupCatg" placeholder="Thể loại">
 
-        <input type="text" id="category" placeholder="Loại">
+        <input type="text" id="value" placeholder="Loại">
         <button onclick="myFunction()">Submit</button>
         <script>
                 function myFunction() {
                     var groupCatg = document.getElementById("groupCatg").value;
-                    var category = document.getElementById("category").value
+                    var value = document.getElementById("value").value;
+                    var personCatg = document.getElementById("personCategory").value;
+                    var gender = document.getElementById("gender").value;
+
                     // document.getElementById("demo").innerHTML = x;
-                    firebase.database().ref('DataCategoryImage').child(groupCatg).push({ 
-                        category
+                    firebase.database().ref('DataCategoryImage').child(personCatg).child(gender).child(groupCatg).push({ 
+                        value: value
                     });
                
                 }
