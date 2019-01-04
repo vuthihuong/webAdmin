@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My First</title>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCnKHP42pOqDkrz5IlAW513pEvPZcQCVb8",
+            authDomain: "photoapp-859b5.firebaseapp.com",
+            databaseURL: "https://photoapp-859b5.firebaseio.com",
+            projectId: "photoapp-859b5",
+            storageBucket: "photoapp-859b5.appspot.com",
+            messagingSenderId: "429622908808"
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+
+<body>
+    <h1>Bảng số liệu chiều cao tìm kiếm</h1>
+    <!-- <input type="text" id="groupCost" placeholder="Thể loại"> -->
+
+    <input type="text" id="value" placeholder="Chiều cao">
+    <button onclick="myFunction()">Submit</button>
+    <script>
+        function myFunction() {
+            // var groupCost = document.getElementById("groupCost").value;
+            var value = document.getElementById("value").value
+            // document.getElementById("demo").innerHTML = x;
+            firebase.database().ref('DataHeight').push({
+                // groupCost: groupCost,
+                value: value
+            });
+
+        }
+
+    </script>
+</body>
+
+</html>

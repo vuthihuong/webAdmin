@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My First</title>
+        
+        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyCnKHP42pOqDkrz5IlAW513pEvPZcQCVb8",
+                authDomain: "photoapp-859b5.firebaseapp.com",
+                databaseURL: "https://photoapp-859b5.firebaseio.com",
+                projectId: "photoapp-859b5",
+                storageBucket: "photoapp-859b5.appspot.com",
+                messagingSenderId: "429622908808"
+            };
+            firebase.initializeApp(config);
+        </script>
+    </head>
+    <body>
+        <h1>Thêm địa chỉ</h1>
+        <p>Tên địa chỉ</p>
+        <input type="text" id="address" placeholder="Thành phố" >
+        <button onclick="myFunction()">Submit</button>
+        <script>
+                function myFunction() {
+                    var address = document.getElementById("address").value;
+
+                    // document.getElementById("demo").innerHTML = x;
+                    firebase.database().ref('DataAddress').push({ 
+                        value: address
+                    });
+               
+                }
+           
+        </script>
+    </body>
+</html>

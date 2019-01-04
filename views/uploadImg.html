@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My First</title>
+        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script>
+            var config = {
+                apiKey: "AIzaSyCnKHP42pOqDkrz5IlAW513pEvPZcQCVb8",
+                authDomain: "photoapp-859b5.firebaseapp.com",
+                databaseURL: "https://photoapp-859b5.firebaseio.com",
+                projectId: "photoapp-859b5",
+                storageBucket: "photoapp-859b5.appspot.com",
+                messagingSenderId: "429622908808"
+            };
+            firebase.initializeApp(config);
+            // var Flickr = require("flickrapi"),
+                
+        </script>
+    </head>
+    <body style="margin-left: 300px">
+        <input type="file" id = "file" class= "upload-group" />
+           
+        <button id='uploadButton' onclick="uploadfile()">Submit</button>
+        
+        <script>
+            var selectedFile;
+                $("#file").on("change", function(event){ 
+                    selectedFile = event.target.files[0];
+                    $('#uploadButton').show();
+                });
+          
+            function uploadfile() {
+                var filename = selectedFile.name;
+                // var storageRef = firebase.storage().ref('/images/'+ filename);
+                // var uploadTask = storageRef.put(selectedFile)
+
+             
+
+
+            //     Flickr.authenticate(flickrOptions, function (error, flickr) {
+            //         flickrOptions = {
+            //         api_key: "3bfb72007e1061d8ac6893be02e7180a",
+            //         secret: "0c89cc592fd4a7d4",
+            //         user_id: "161343894@N08",
+            //         access_token: "72157702392898345-d10793d50873ee02",
+            //         access_token_secret: "c1c201acf0a4eee5"
+            //     };
+            //         var uploadOptions = {
+            //             photos: [{
+            //                 title: "test",
+            //                 tags: [
+            //                     "happy fox",
+            //                     "test 1"
+            //                 ],
+            //                 photo: filename
+            //             }, {
+            //                 title: "test2",
+            //                 tags: "happy fox image \"test 2\" separate tags",
+            //                 photo: filename
+            //             }]
+            //         };
+
+
+            //       Flickr.upload(uploadOptions, flickrOptions, function (err, result) {
+            //           if (err) {
+            //               return console.error(error);
+            //           }
+            //           console.log("photos uploaded", result);
+            //       });
+            //   });
+                 
+                // uploadTask.on('state_changed', function(snapshot){
+                // }, function(error) {
+                // }, function() {
+                //     var postKey = firebase.database().ref('ImagePose').push().key;
+                //     uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+                //         var updates = {};
+                //         var postData = { 
+                //             url: downloadURL, 
+                //         }
+                //         if(valueKindOfPerson === "Một người" && valueGender === "Nam"){
+                //             if(valueClother === "Áo dài"){ 
+                //                 updates['/ImagePose/OnePerson/Male/AoDai/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Áo khoác"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Coat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Quần áo đồng phục"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Uniform/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Váy"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Skirt/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Xe đạp"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Cycle/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Mũ, nón, ô"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Hat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đồng hồ, vòng tay, đồ trang sức"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Clock/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Túi xách, điện thoại"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Telephone/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Kính"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Glass/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Bóng bay"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Ballon/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Bó hoa"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Flower/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                           
+                //             else if(valueClother === "Đàn"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Instrument/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Máy ảnh"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Photo/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Hồ, sông, biển"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Beach/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đầm sen"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Lotus/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Núi"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Mountain/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khung cửa"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Door/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Cầu thang"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Stair/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khu vườn, công viên"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Park/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đứng"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Stand/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Ngồi"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Seat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Nằm"){ 
+                //                 updates['/ImagePose/OnePerson/Male/Lie/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tựa tay lên một điểm"){ 
+                //                 updates['/ImagePose/OnePerson/Male/HandRest/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Xoay nghiêng người"){ 
+                //                 updates['/ImagePose/OnePerson/Male/TurnCircle/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đứng chéo chân"){ 
+                //                 updates['/ImagePose/OnePerson/Male/CrossLeg/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khoanh tay trước ngực"){ 
+                //                 updates['/ImagePose/OnePerson/Male/HandChest/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tay chống hông"){ 
+                //                 updates['/ImagePose/OnePerson/Male/HipHand/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother == "Cho tay vào túi quần"){ 
+                //                 updates['/ImagePose/OnePerson/Male/PantPocket/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tựa cằm lên tay"){ 
+                //                 updates['/ImagePose/OnePerson/Male/HandChin/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                           
+                //         }
+                //         else if(valueKindOfPerson === "Một người" && valueGender === "Nữ"){
+                //             if(valueClother === "Áo dài"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/AoDai/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Áo khoác"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Coat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Quần áo đồng phục"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Uniform/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Váy"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Skirt/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Xe đạp"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Cycle/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Mũ, nón, ô"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Hat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đồng hồ, vòng tay, đồ trang sức"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Clock/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Túi xách, điện thoại"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Telephone/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Kính"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Glass/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Bóng bay"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Ballon/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Bó hoa"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Flower/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đàn"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Instrument/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Máy ảnh"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Photo/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Hồ, sông, biển"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Beach/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đầm sen"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Lotus/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Núi"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Mountain/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khung cửa"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Door/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Cầu thang"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Stair/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khu vườn, công viên"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Park/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đứng"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Stand/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Ngồi"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Seat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Nằm"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/Lie/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tựa tay lên một điểm"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/HandRest/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Xoay nghiêng người"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/TurnCircle/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đứng chéo chân"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/CrossLeg/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khoanh tay trước ngực"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/HandChest/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tay chống hông"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/HipHand/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother == "Cho tay vào túi quần"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/PantPocket/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tựa cằm lên tay"){ 
+                //                 updates['/ImagePose/OnePerson/FeMale/HandChin/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                           
+                //         }
+                //         if(valueKindOfPerson === "Hai người" && valueGender === "Nam - Nam"){
+                //             if(valueClother === "Áo dài"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/AoDai/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Áo khoác"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Coat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Quần áo đồng phục"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Uniform/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Váy"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Skirt/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Mũ, nón, ô"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Hat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đồng hồ, vòng tay, đồ trang sức"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Clock/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Túi xách, điện thoại"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Telephone/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Kính"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Glass/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Bóng bay"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Ballon/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Bó hoa"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Flower/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Xe đạp"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Cycle/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đàn"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Instrument/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Máy ảnh"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Photo/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Hồ, sông, biển"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Beach/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đầm sen"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Lotus/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Núi"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Mountain/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khung cửa"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Door/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Cầu thang"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Stair/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khu vườn, công viên"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Park/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đứng"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Stand/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Ngồi"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Seat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Nằm"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/Lie/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tựa tay lên một điểm"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/HandRest/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Xoay nghiêng người"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/TurnCircle/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đứng chéo chân"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/CrossLeg/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khoanh tay trước ngực"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/HandChest/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tay chống hông"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/HipHand/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother == "Cho tay vào túi quần"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/PantPocket/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tựa cằm lên tay"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleMale/HandChin/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                           
+                           
+                //         }
+                //         else if(valueKindOfPerson === "Hai người" && valueGender === "Nam - Nữ"){
+                //             if(valueClother === "Áo dài"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/AoDai/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Áo khoác"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Coat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Quần áo đồng phục"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Uniform/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Váy"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Skirt/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Mũ, nón, ô"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Hat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đồng hồ, vòng tay, đồ trang sức"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Clock/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Túi xách, điện thoại"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Telephone/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Kính"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Glass/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Bóng bay"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Ballon/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Bó hoa"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Flower/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Xe đạp"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Cycle/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đàn"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Instrument/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Máy ảnh"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Photo/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Hồ, sông, biển"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Beach/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đầm sen"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Lotus/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Núi"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Mountain/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khung cửa"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Door/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Cầu thang"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Stair/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khu vườn, công viên"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Park/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đứng"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Stand/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Ngồi"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Seat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Nằm"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/Lie/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tựa tay lên một điểm"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/HandRest/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Xoay nghiêng người"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/TurnCircle/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đứng chéo chân"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/CrossLeg/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khoanh tay trước ngực"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/HandChest/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tay chống hông"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/HipHand/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother == "Cho tay vào túi quần"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/PantPocket/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tựa cằm lên tay"){ 
+                //                 updates['/ImagePose/TwoPerson/FeMaleAndMale/HandChin/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                           
+                           
+                //         }
+                //         else if(valueKindOfPerson === "Hai người" && valueGender === "Nữ - Nữ"){
+                //             if(valueClother === "Áo dài"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/AoDai/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Áo khoác"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Coat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Quần áo đồng phục"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Uniform/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Váy"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Skirt/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Mũ, nón, ô"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Hat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đồng hồ, vòng tay, đồ trang sức"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Clock/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Túi xách, điện thoại"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Telephone/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Kính"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Glass/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Bóng bay"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Ballon/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Bó hoa"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Flower/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Xe đạp"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Cycle/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đàn"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Instrument/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Máy ảnh"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Photo/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Hồ, sông, biển"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Beach/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đầm sen"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Lotus/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Núi"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Mountain/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khung cửa"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Door/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Cầu thang"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Stair/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khu vườn, công viên"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Park/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đứng"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Stand/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Ngồi"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Seat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Nằm"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/Lie/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tựa tay lên một điểm"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/HandRest/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Xoay nghiêng người"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/TurnCircle/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đứng chéo chân"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/CrossLeg/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khoanh tay trước ngực"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/HandChest/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tay chống hông"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/HipHand/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother == "Cho tay vào túi quần"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/PantPocket/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tựa cằm lên tay"){ 
+                //                 updates['/ImagePose/TwoPerson/DoubleFeMale/HandChin/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                           
+                //         }
+
+                //         if(valueKindOfPerson === "Nhóm người" && valueGender === "Nam"){
+                //             if(valueClother === "Áo dài"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/AoDai/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Áo khoác"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Coat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Quần áo đồng phục"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Uniform/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Váy"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Skirt/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Mũ, nón, ô"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Hat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đồng hồ, vòng tay, đồ trang sức"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Clock/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Túi xách, điện thoại"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Telephone/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Kính"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Glass/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Bóng bay"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Ballon/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Bó hoa"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Flower/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Xe đạp"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/cycle/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đàn"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Instrument/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Máy ảnh"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Photo/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Hồ, sông, biển"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Beach/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đầm sen"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Lotus/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Núi"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Mountain/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khung cửa"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Door/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Cầu thang"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Stair/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khu vườn, công viên"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Park/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đứng"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Stand/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Ngồi"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Seat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Nằm"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/Lie/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tựa tay lên một điểm"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/HandRest/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Xoay nghiêng người"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/TurnCircle/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đứng chéo chân"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/CrossLeg/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khoanh tay trước ngực"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/HandChest/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tay chống hông"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/HipHand/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother == "Cho tay vào túi quần"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/PantPocket/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tựa cằm lên tay"){ 
+                //                 updates['/ImagePose/GroupPerson/Male/HandChin/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //         }
+                //         else if(valueKindOfPerson === "Nhóm người" && valueGender === "Nữ"){
+                //             if(valueClother === "Áo dài"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/AoDai/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Áo khoác"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Coat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Quần áo đồng phục"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Uniform/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Váy"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Skirt/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Mũ, nón, ô"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Hat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đồng hồ, vòng tay, đồ trang sức"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Clock/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Túi xách, điện thoại"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Telephone/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Kính"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Glass/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Bóng bay"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Ballon/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Bó hoa"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Flower/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Xe đạp"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/cycle/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đàn"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Instrument/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Máy ảnh"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Photo/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Hồ, sông, biển"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Beach/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đầm sen"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Lotus/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Núi"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Mountain/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khung cửa"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Door/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Cầu thang"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Stair/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khu vườn, công viên"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Park/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đứng"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Stand/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Ngồi"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Seat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Nằm"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/Lie/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tựa tay lên một điểm"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/HandRest/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Xoay nghiêng người"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/TurnCircle/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đứng chéo chân"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/CrossLeg/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khoanh tay trước ngực"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/HandChest/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tay chống hông"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/HipHand/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother == "Cho tay vào túi quần"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/PantPocket/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tựa cằm lên tay"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMale/HandChin/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                           
+                //         }
+                //         else if(valueKindOfPerson === "Nhóm người" && valueGender === "Nam - Nữ"){
+                //             if(valueClother === "Áo dài"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/AoDai/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Áo khoác"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Coat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Quần áo đồng phục"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Uniform/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Váy"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Skirt/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Mũ, nón, ô"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Hat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đồng hồ, vòng tay, đồ trang sức"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Clock/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Túi xách, điện thoại"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Telephone/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Kính"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Glass/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Bóng bay"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Ballon/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Bó hoa"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Flower/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Xe đạp"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/cycle/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đàn"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Instrument/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Máy ảnh"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Photo/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Hồ, sông, biển"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Beach/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đầm sen"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Lotus/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Núi"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Mountain/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khung cửa"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Door/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Cầu thang"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Stair/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khu vườn, công viên"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Park/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đứng"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Stand/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Ngồi"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Seat/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Nằm"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/Lie/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tựa tay lên một điểm"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/HandRest/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Xoay nghiêng người"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/TurnCircle/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Đứng chéo chân"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/CrossLeg/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Khoanh tay trước ngực"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/HandChest/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tay chống hông"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/HipHand/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother == "Cho tay vào túi quần"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/PantPocket/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                //             else if(valueClother === "Tựa cằm lên tay"){ 
+                //                 updates['/ImagePose/GroupPerson/FeMaleAndMale/HandChin/'+postKey] = postData;
+                //                 firebase.database().ref().update(updates);
+                //             }
+                           
+                //         }
+                //       });
+                //     }
+                //   );
+                }
+        </script>
+    </body>
+</html>

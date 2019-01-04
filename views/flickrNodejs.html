@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My First</title>
+        
+        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyCnKHP42pOqDkrz5IlAW513pEvPZcQCVb8",
+                authDomain: "photoapp-859b5.firebaseapp.com",
+                databaseURL: "https://photoapp-859b5.firebaseio.com",
+                projectId: "photoapp-859b5",
+                storageBucket: "photoapp-859b5.appspot.com",
+                messagingSenderId: "429622908808"
+            };
+            firebase.initializeApp(config);
+        </script>
+       
+    </head>
+    <body>
+           <form method="POST" id="Upload" action="https://up.flickr.com/services/upload/" enctype="multipart/form-data">
+                <h4>Upload</h4>
+                <p>Tiêu đề ảnh</p>
+                <input type="text" name="titleimage" id="titleimage" required />
+                <input type="text" name="description" id="description"  />
+                <input type="file" name="photo" id="file" required />
+                <input type="hidden" name="api_key" value="3bfb72007e1061d8ac6893be02e7180a" />
+                <input type="hidden" name="auth_token" value="72157702287929525-cc49b0809aa18bb7" />
+                <input type="hidden" name="api_sig" value="1767425c2a6a86c1babd3e7555884eef" />
+                <input type="submit" name="submit" value="upload" />
+               <p id="message"></p>
+            </form>
+           
+    </body>
+</html>
+
+
+<script type="text/javascript">
+   
+    $(document).ready(function(){ 
+        $('#upload').on('submit', (function(e){ 
+            e.preventDefault();
+            var formData = new FormData();
+            formData.append('photo', $('input[type=file]')[0].files[0]);
+            formData.append('title', $('#titleimage').val());
+            formData.append('description', $('#description').val());
+            formData.append('api_key', '3bfb72007e1061d8ac6893be02e7180a');
+            formData.append('auth_token', '72157702392898345-d10793d50873ee02');
+            var sig  = CryptoJS.MD5("c1c201acf0a4eee5&api_key3bfb72007e1061d8ac6893be02e7180a&perms=write&auth_token72157702392898345-d10793d50873ee02" + "description" + $('#description').val() + "title" + $('#titleimage').val()).toString();
+            formData.append('api_sig', sig);
+            firebase.database().ref('DataImg1').push({ 
+                            value: formData
+                    });
+            $.ajax({
+                type:'POST',
+                url:'https://up.flickr.com/services/upload/',
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function(data){ 
+                    alert('Thành công');
+                },
+                error: function(data){ 
+                    alert('Lỗi')
+                }
+            });
+            // $('#message').html("upload success");
+        }));
+    })
+
+</script>
+
+
+<!-- <script type="text/javascript">
+    $(document).ready(function(){ 
+        $.ajax({
+            type:'POST',
+            url:'https://up.flickr.com/services/upload/',
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(data){ 
+                alert('Thành công');
+            },
+            error: function(data){ 
+                alert('Lỗi')
+            }
+        });
+            $('#message').html("upload success");
+        });
+</script> -->

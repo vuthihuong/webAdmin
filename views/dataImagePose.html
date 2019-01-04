@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My First</title>
+        
+        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyCnKHP42pOqDkrz5IlAW513pEvPZcQCVb8",
+                authDomain: "photoapp-859b5.firebaseapp.com",
+                databaseURL: "https://photoapp-859b5.firebaseio.com",
+                projectId: "photoapp-859b5",
+                storageBucket: "photoapp-859b5.appspot.com",
+                messagingSenderId: "429622908808"
+            };
+            firebase.initializeApp(config);
+        </script>
+    </head>
+    <body>
+        <h1>Thêm phân loại tìm kiếm </h1>
+        <input type="text" id="groupCatg" placeholder="Thể loại">
+
+        <input type="text" id="value" placeholder="Loại">
+        <button onclick="myFunction()">Submit</button>
+        <script>
+                function myFunction() {
+                    var groupCatg = document.getElementById("groupCatg").value;
+                    var value = document.getElementById("value").value
+                    // document.getElementById("demo").innerHTML = x;
+                    firebase.database().ref('DataPoseTwoPerson').child(groupCatg).push({ 
+                        value: value
+                    });
+               
+                }
+           
+        </script>
+    </body>
+</html>
